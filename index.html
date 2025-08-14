@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+body {
+    background: linear-gradient(135deg, #130f27, #202243, #312c64);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+form {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 30px 35px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.4),
+                0 0 15px rgba(0, 200, 255, 0.4);
+    width: 320px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.4),
+                    0 0 15px rgba(0, 200, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.4),
+                    0 0 25px rgba(0, 200, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.4),
+                    0 0 15px rgba(0, 200, 255, 0.4);
+    }
+}
+h1 {
+    color: white;
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+label {
+    text-align: left;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 14px;
+}
+input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.85);
+    transition: all 0.3s ease-in-out;
+}
+input:focus {
+    background: white;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.6);
+}
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: linear-gradient(135deg, #0056b3, #009cbf);
+    color: white;
+}
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 14px;
+}
+.input-container input {
+    width: 100%;
+    padding: 10px 10px 10px 35px; 
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.85);
+    transition: 0.3s;
+}
+.input-container input:focus {
+    background: white;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.6);
+}
+</style>
+</head>
+<body>
+    <form onsubmit="return validateForm()"method="post"action="login.php">
+    <h1>WELCOME!</h1>
+    <label for="username">Email</label>
+    <div class="input-container">
+        <i class="fa-solid fa-envelope"></i>
+    <input type="text" id="email"name="email"><br>
+    </div> 
+    <label for="password">Password</label>
+    <div class="input-container">
+        <i class="fa-solid fa-lock"></i>
+    <input type="password"id="password"name="password"><br>
+    </div>
+    <br><button type="submit">LOGIN</button>
+    </form>
+</body>
+<script src="login.js"></script>
+</html>
